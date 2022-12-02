@@ -6,7 +6,7 @@ import { Paper } from '@mui/material';
 
 export const Layout = () => {
   return (
-    <Paper sx={{ height: '100vh' }}>
+    <Paper sx={{ height: '100vh', backgroundColor: '#F5F2E8 ' }}>
       <AppBarHeader />
       <Suspense fallback={null}>
         <Outlet />

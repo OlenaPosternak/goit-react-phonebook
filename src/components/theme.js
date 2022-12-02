@@ -6,15 +6,10 @@ let theme = createTheme({
     primary: {
       main: '#90A955',
       contrastText: '#202020',
-    },
-    neutral: {
-      main: '#6D695B',
-      contrastText: '#fff',
+      bacground: '#F5F2E8 ',
     },
   },
 });
 
-console.log(theme.palette.mode);
-
 theme = responsiveFontSizes(theme);
-export default theme;
+export { theme };

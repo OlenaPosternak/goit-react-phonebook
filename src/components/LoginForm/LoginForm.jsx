@@ -21,25 +21,25 @@ export const LoginForm = () => {
 
   return (
     <Box sx={{ flexGrow: 1, maxWidth: 752 }}>
-    <Form onSubmit={handleSubmit} autoComplete="off">
-      <TextField label="email" variant="outlined" type="email" name="email" />
+      <Form onSubmit={handleSubmit} autoComplete="off">
+        <TextField label="email" variant="outlined" type="email" name="email" />
 
-      <TextField
-        label="password"
-        variant="outlined"
-        type="password"
-        name="password"
-      />
+        <TextField
+          label="password"
+          variant="outlined"
+          type="password"
+          name="password"
+        />
 
-      <Button
-        sx={{ mt: '10px' }}
-        color="primary"
-        variant="contained"
-        type="submit"
-      >
-        Login{' '}
-      </Button>
-    </Form>
+        <Button
+          sx={{ mt: '10px' }}
+          color="primary"
+          variant="contained"
+          type="submit"
+        >
+          Login{' '}
+        </Button>
+      </Form>
     </Box>
   );
 };

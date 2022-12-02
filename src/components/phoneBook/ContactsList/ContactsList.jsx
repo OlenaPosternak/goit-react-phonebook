@@ -43,33 +43,33 @@ export const ContactsList = () => {
         </Typography>
         {isLoading && !error && <b>Request in progress...</b>}
         <List>
-          {contacts.map(contact => (
-            <Item
-              key={contact.id}
-              secondaryAction={
-                <IconButton
-                  edge="end"
-                  aria-label="delete"
-                  onClick={() => dispatch(deleteContacts(contact.id))}
+          {contacts.length > 0
+            ? contacts.map(contact => (
+                <Item
+                  key={contact.id}
+                  secondaryAction={
+                    <IconButton
+                      edge="end"
+                      aria-label="delete"
+                      onClick={() => dispatch(deleteContacts(contact.id))}
+                    >
+                      <DeleteIcon />
+                    </IconButton>
+                  }
                 >
-                  <DeleteIcon />
-                </IconButton>
-              }
-            >
-              <ListItemAvatar>
-                <Avatar />
-              </ListItemAvatar>
-              <ListItemText
-                primary={
-                  //   <React.Fragment>
-                  <Typography component="p" variant="h6">
-                    {contact.name}: {contact.number}
-                  </Typography>
-                  //   </React.Fragment>
-                }
-              />
-            </Item>
-          ))}
+                  <ListItemAvatar>
+                    <Avatar />
+                  </ListItemAvatar>
+                  <ListItemText
+                    primary={
+                      <Typography component="p" variant="h6">
+                        {contact.name}: {contact.number}
+                      </Typography>
+                    }
+                  />
+                </Item>
+              ))
+            : 'No contact here yet'}
         </List>
       </Grid>
     </Box>

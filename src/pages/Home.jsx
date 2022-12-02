@@ -4,15 +4,8 @@ const HomePage = () => {
   return (
     <Container sx={{ mt: { xs: '5px', sm: '20px' } }}>
       <Typography component="h1" variant="h2" sx={{ textAlign: 'center' }}>
-        Phonebook welcome page{' '}
-        <Typography
-          component="span"
-          variant="body"
-          role="img"
-          aria-label="Greeting icon"
-        >
-          💁‍♀️
-        </Typography>
+        Hello! Welcome to the Phonebook. This app helps you to save and find
+        your contacts in easy, fast, and comfortable ways.
       </Typography>
     </Container>
   );

@@ -7,7 +7,7 @@ import { BrowserRouter } from 'react-router-dom';
 import { store, persistor } from './redux/store';
 import { PersistGate } from 'redux-persist/integration/react';
 import { ThemeProvider } from '@mui/material/styles';
-import theme from '../src/components/theme';
+import { theme } from '../src/components/theme';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>

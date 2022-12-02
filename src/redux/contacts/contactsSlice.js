@@ -25,24 +25,12 @@ export const contactsSlice = createSlice({
         state.contacts.push(action.payload);
       })
       .addCase(deleteContacts.fulfilled, (state, action) => {
-        // const index = state.contacts.findIndex(
-        //   contact => contact.id === action.payload.id
-        // );
-        // state.contacts.splice(index, 1);
-
-        //       let test = state.contacts.filter(
-        //     contact => contact.id !== action.payload.id)
-        //     console.log(test)
-
-        // state.contacts = test
-
         return {
           ...state,
           contacts: state.contacts.filter(
             contact => contact.id !== action.payload.id
           ),
         };
-        
       })
       .addMatcher(
         isAnyOf(...extraAxtions.map(action => action.pending)),
@@ -66,7 +54,7 @@ export const contactsSlice = createSlice({
       ),
 });
 
-// Генератори екшенів
+
 export const { filterContacts } = contactsSlice.actions;
-// Редюсер слайсу
+
 export const contactsReducer = contactsSlice.reducer;
