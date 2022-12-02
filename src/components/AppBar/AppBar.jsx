@@ -11,7 +11,7 @@ export const AppBarHeader = () => {
   const isLoggedIn = useSelector(selectIsLoggedIn);
 
   return (
-    <Header sx={{ maxWidth: 1600 }} position="static">
+    <Header position="static">
       <Navigation />
       {isLoggedIn ? <UserMenu /> : <AuthNav />}
     </Header>
