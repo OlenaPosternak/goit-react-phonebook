@@ -6,9 +6,8 @@ import { selectIsLoggedIn } from '../../redux/auth/selectors';
 
 export const Navigation = () => {
   const isLoggedIn = useSelector(selectIsLoggedIn);
-
   return (
-    <Nav sx={{ display: 'flex' }}>
+    <Nav sx={{ display: 'flex', flexDirection:{xs:'column', sm:'inherit'} }}>
       <NavLinkItem to="/">
         <Typography variant="body" color="primary.contrastText">
           Home
