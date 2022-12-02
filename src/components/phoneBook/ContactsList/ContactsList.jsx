@@ -35,7 +35,7 @@ export const ContactsList = () => {
   }, [dispatch]);
 
   return (
-    <Box sx={{ flexGrow: 1, maxWidth: 752 }}>
+    <Box sx={{ flexGrow: 1, maxWidth: 752, width: 'inherit' }}>
       <Grid>
         <Typography variant="h4" component="h2">
           {' '}

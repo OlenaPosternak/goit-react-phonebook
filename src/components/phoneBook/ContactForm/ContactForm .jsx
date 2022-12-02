@@ -50,7 +50,7 @@ export default function ContactForm() {
   }
 
   return (
-    <Box sx={{ flexGrow: 1, maxWidth: 752 }}>
+    <Box sx={{ flexGrow: 1, maxWidth: 752, width: 'inherit' }}>
       <Form onSubmit={handelSubmit}>
         <Typography
           variant="body"
