@@ -8,8 +8,8 @@ import { Navigation } from '../Navigation/Navigation';
 
 import { Header } from './AppBar.styled';
 import { Switch } from '@mui/material';
-// import theme from 'components/theme';
-// import { useEffect } from 'react';
+import theme from 'components/theme';
+import { useEffect } from 'react';
 
 export const AppBarHeader = () => {
   const isLoggedIn = useSelector(selectIsLoggedIn);
@@ -18,14 +18,16 @@ export const AppBarHeader = () => {
 
   const handleChange = event => {
     setDarkMode(event.target.checked);
-    console.log(darkMode)
+    console.log(darkMode);
   };
 
-//   useEffect(() => {
-//     if (darkMode) {
-//       theme.palette.mode = 'dark';
-//     }
-//   }, [darkMode]);
+  useEffect(() => {
+    if (darkMode) {
+      theme.palette.mode = 'dark';
+    } else {
+      theme.palette.mode = 'light';
+    }
+  }, [darkMode]);
 
   return (
     <Header position="static">
