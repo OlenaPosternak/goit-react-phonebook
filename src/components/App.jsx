@@ -7,6 +7,7 @@ import { PrivateRoute } from './PrivateRoute';
 import { RestrictedRoute } from './RestrictedRoute';
 
 import { Layout } from './Layout';
+import NotFound from '../components/NotFound';
 import { Loader } from '../components/Loader';
 
 const HomePage = lazy(() => import('../pages/Home'));
@@ -53,6 +54,7 @@ export default function App() {
           }
         />
       </Route>
+      <Route path="*" element={<NotFound />} />
     </Routes>
   );
 }

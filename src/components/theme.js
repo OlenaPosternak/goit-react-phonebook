@@ -1,13 +1,10 @@
 import { createTheme, responsiveFontSizes } from '@mui/material/styles';
 
 let theme = createTheme({
-  status: {
-    danger: '#e53e3e',
-  },
   palette: {
+    mode: 'light',
     primary: {
       main: '#90A955',
-      darker: '#053e85',
       contrastText: '#202020',
     },
     neutral: {
@@ -16,6 +13,8 @@ let theme = createTheme({
     },
   },
 });
+
+console.log(theme.palette.mode);
 
 theme = responsiveFontSizes(theme);
 export default theme;

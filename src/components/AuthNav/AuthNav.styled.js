@@ -13,6 +13,7 @@ export const NavLinkItem = styled(NavLink)`
   border-radius: 5px;
   padding: 2px;
   box-shadow: rgb(0 0 0 / 15%) 0px 4px 4px;
+  background-color: #90a955;
 
   &.active {
     background-color: #336699;
