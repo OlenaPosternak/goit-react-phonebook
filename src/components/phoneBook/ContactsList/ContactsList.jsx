@@ -1,9 +1,4 @@
-import {
-  ListOfContact,
-  Container,
-  ContactItem,
-  Button,
-} from './ContactList.module';
+import React from 'react';
 
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
@@ -14,6 +9,19 @@ import {
   selectVisibleContacts,
 } from '../../../redux/contacts/selectors';
 import { fetchContacts } from '../../../redux/contacts/operations';
+
+import {
+  Box,
+  Grid,
+  Typography,
+  List,
+  IconButton,
+  ListItemText,
+  Avatar,
+  ListItemAvatar,
+} from '@mui/material';
+import DeleteIcon from '@mui/icons-material/Delete';
+import { Item } from './ContactList.styled';
 
 export const ContactsList = () => {
   const contacts = useSelector(selectVisibleContacts);
@@ -27,19 +35,43 @@ export const ContactsList = () => {
   }, [dispatch]);
 
   return (
-    <Container>
-      <h2>My contacts</h2>
-      {isLoading && !error && <b>Request in progress...</b>}
-      {contacts.map(contact => (
-        <ListOfContact key={contact.id}>
-          <ContactItem>
-            {contact.name}: {contact.number}{' '}
-            <Button onClick={() => dispatch(deleteContacts(contact.id))}>
-              Delete
-            </Button>
-          </ContactItem>
-        </ListOfContact>
-      ))}
-    </Container>
+    <Box sx={{ flexGrow: 1, maxWidth: 752 }}>
+      <Grid>
+        <Typography variant="h4" component="h2">
+          {' '}
+          My contacts
+        </Typography>
+        {isLoading && !error && <b>Request in progress...</b>}
+        <List>
+          {contacts.map(contact => (
+            <Item
+              key={contact.id}
+              secondaryAction={
+                <IconButton
+                  edge="end"
+                  aria-label="delete"
+                  onClick={() => dispatch(deleteContacts(contact.id))}
+                >
+                  <DeleteIcon />
+                </IconButton>
+              }
+            >
+              <ListItemAvatar>
+                <Avatar />
+              </ListItemAvatar>
+              <ListItemText
+                primary={
+                  //   <React.Fragment>
+                  <Typography component="p" variant="h6">
+                    {contact.name}: {contact.number}
+                  </Typography>
+                  //   </React.Fragment>
+                }
+              />
+            </Item>
+          ))}
+        </List>
+      </Grid>
+    </Box>
   );
 };

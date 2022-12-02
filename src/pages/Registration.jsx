@@ -1,10 +1,10 @@
 import { RegisterForm } from 'components/RegisterForm/RegisterForm';
-
+import { Container } from '@mui/material';
 const RegisterPage = () => {
   return (
-    <div>
+    <Container sx={{ mt: { xs: '5px', sm: '20px' } }}>
       <RegisterForm />
-    </div>
+    </Container>
   );
 };
 

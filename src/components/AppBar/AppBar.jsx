@@ -5,13 +5,15 @@ import { AuthNav } from 'components/AuthNav/AuthNav';
 import { UserMenu } from 'components/UserMenu/UserMenu';
 import { Navigation } from '../Navigation/Navigation';
 
-export const AppBar = () => {
+import { Header } from './AppBar.styled';
+
+export const AppBarHeader = () => {
   const isLoggedIn = useSelector(selectIsLoggedIn);
 
   return (
-    <header>
+    <Header sx={{ maxWidth: 1600 }} position="static">
       <Navigation />
       {isLoggedIn ? <UserMenu /> : <AuthNav />}
-    </header>
+    </Header>
   );
 };
