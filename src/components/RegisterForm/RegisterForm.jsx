@@ -1,6 +1,6 @@
 import { useDispatch } from 'react-redux';
 import { register } from 'redux/auth/operations';
-import { Box, Button, TextField } from '@mui/material';
+import { Box, Button, Container, TextField } from '@mui/material';
 import { Form } from './RegisterForm.styled';
 
 export const RegisterForm = () => {
@@ -20,6 +20,8 @@ export const RegisterForm = () => {
   };
 
   return (
+    <Container sx={{ display: 'flex', justifyContent: 'center', mt: { xs: '5px', sm: '20px' }, }}>
+
     <Box sx={{ flexGrow: 1, maxWidth: 752 }}>
       <Form onSubmit={handleSubmit} autoComplete="off">
         <TextField
@@ -43,5 +45,6 @@ export const RegisterForm = () => {
         </Button>
       </Form>
     </Box>
+    </Container>
   );
 };
