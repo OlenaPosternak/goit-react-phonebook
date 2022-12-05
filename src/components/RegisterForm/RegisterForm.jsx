@@ -20,31 +20,44 @@ export const RegisterForm = () => {
   };
 
   return (
-    <Container sx={{ display: 'flex', justifyContent: 'center', mt: { xs: '5px', sm: '20px' }, }}>
+    <Container
+      sx={{
+        display: 'flex',
+        justifyContent: 'center',
+        mt: { xs: '5px', sm: '20px' },
+      }}
+    >
+      <Box sx={{ flexGrow: 1, maxWidth: 752 }}>
+        <Form onSubmit={handleSubmit} autoComplete="off">
+          <TextField
+            label="Username"
+            variant="outlined"
+            type="text"
+            name="name"
+            required
+          />
 
-    <Box sx={{ flexGrow: 1, maxWidth: 752 }}>
-      <Form onSubmit={handleSubmit} autoComplete="off">
-        <TextField
-          label="Username"
-          variant="outlined"
-          type="text"
-          name="name"
-        />
+          <TextField
+            label="Email"
+            variant="outlined"
+            type="email"
+            name="email"
+            required
+          />
 
-        <TextField label="Email" variant="outlined" type="email" name="email" />
+          <TextField
+            label="Password"
+            variant="outlined"
+            type="password"
+            name="password"
+            required
+          />
 
-        <TextField
-          label="Password"
-          variant="outlined"
-          type="password"
-          name="password"
-        />
-
-        <Button variant="contained" type="submit" sx={{ mt: '10px' }}>
-          Register
-        </Button>
-      </Form>
-    </Box>
+          <Button variant="contained" type="submit" sx={{ mt: '10px' }}>
+            Register
+          </Button>
+        </Form>
+      </Box>
     </Container>
   );
 };

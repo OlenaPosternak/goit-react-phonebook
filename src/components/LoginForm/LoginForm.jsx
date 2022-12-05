@@ -15,7 +15,10 @@ export const LoginForm = () => {
         email: form.elements.email.value,
         password: form.elements.password.value,
       })
-    );
+
+      
+    )
+   
     form.reset();
   };
 
@@ -34,6 +37,7 @@ export const LoginForm = () => {
             variant="outlined"
             type="email"
             name="email"
+            required
           />
 
           <TextField
@@ -41,6 +45,7 @@ export const LoginForm = () => {
             variant="outlined"
             type="password"
             name="password"
+            required
           />
 
           <Button
