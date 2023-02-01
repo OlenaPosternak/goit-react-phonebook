@@ -8,4 +8,6 @@ export const Header = styled(AppBar)`
   justify-content: space-between;
   align-items: center;
   padding: 15px;
+  position: relative;
+  z-index:200
 `;
