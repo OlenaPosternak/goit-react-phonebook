@@ -3,7 +3,9 @@ import axios from 'axios';
 
 import { toast } from 'react-toastify';
 
-axios.defaults.baseURL = 'https://connections-api.herokuapp.com/';
+// axios.defaults.baseURL = 'https://connections-api.herokuapp.com'; - old settings
+// My own backend (node.js)
+axios.defaults.baseURL = 'https://phonebook-tn5s.onrender.com/'
 
 // Utility to add token
 const setAuthHeader = token => {
@@ -19,12 +21,14 @@ export const register = createAsyncThunk(
   'auth/register',
   async (credentials, thunkAPI) => {
     try {
-      const response = await axios.post('/users/signup', credentials);
+    await axios.post('/users/signup', credentials);
+      const { email, password } = credentials;
+      const response = await axios.post('users/login', { email, password });
       setAuthHeader(response.data.token);
       return response.data;
     } catch (e) {
-      toast.warn('Please try again!');
-      return thunkAPI.rejectWithValue(e.message);
+      toast.warn(e.response.data.message);
+      return thunkAPI.rejectWithValue(e.response.data.message);
     }
   }
 );
@@ -37,8 +41,9 @@ export const logIn = createAsyncThunk(
       setAuthHeader(response.data.token);
       return response.data;
     } catch (e) {
-      toast.warn('Please try again!');
-      return thunkAPI.rejectWithValue(e.message);
+        console.log(e)
+      toast.warn(e.response.data.message);
+      return thunkAPI.rejectWithValue(e.response.data.message);
     }
   }
 );

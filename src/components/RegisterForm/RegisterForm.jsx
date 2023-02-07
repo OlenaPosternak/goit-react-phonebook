@@ -40,6 +40,7 @@ export const RegisterForm = () => {
           <TextField
             label="Email"
             variant="outlined"
+            autoComplete="off"
             type="email"
             name="email"
             required
@@ -48,6 +49,7 @@ export const RegisterForm = () => {
           <TextField
             label="Password"
             variant="outlined"
+            autoComplete="off"
             type="password"
             name="password"
             required

@@ -1,6 +1,10 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
-axios.defaults.baseURL = 'https://connections-api.herokuapp.com';
+import { toast } from 'react-toastify';
+
+// axios.defaults.baseURL = 'https://connections-api.herokuapp.com'; - old settings
+// My own backend (node.js)
+axios.defaults.baseURL = 'https://phonebook-tn5s.onrender.com/';
 
 export const fetchContacts = createAsyncThunk(
   'contacts/fetchAll',
@@ -26,6 +30,9 @@ export const addContacts = createAsyncThunk(
       });
       return response.data;
     } catch (e) {
+      toast.warn(
+        'Phone number must be digits and can contain spaces, dashes, parentheses and can start with +'
+      );
       return thunkAPI.rejectWithValue(e.message);
     }
   }

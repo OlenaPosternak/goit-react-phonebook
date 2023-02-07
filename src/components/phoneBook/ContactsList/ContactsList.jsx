@@ -46,12 +46,12 @@ export const ContactsList = () => {
           {contacts.length > 0
             ? contacts.map(contact => (
                 <Item
-                  key={contact.id}
+                  key={contact._id}
                   secondaryAction={
                     <IconButton
                       edge="end"
                       aria-label="delete"
-                      onClick={() => dispatch(deleteContacts(contact.id))}
+                      onClick={() => dispatch(deleteContacts(contact._id))}
                     >
                       <DeleteIcon />
                     </IconButton>

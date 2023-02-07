@@ -28,7 +28,7 @@ export const contactsSlice = createSlice({
         return {
           ...state,
           contacts: state.contacts.filter(
-            contact => contact.id !== action.payload.id
+            contact => contact._id !== action.payload._id
           ),
         };
       })
